@@ -23,7 +23,7 @@ export const availableIngredients = [
 const App = () => {
   const [ingredientList, setIngredientList] = useState(availableIngredients)
 
-  const [stack, setStack] = useState([])
+  const [burgerStack, setBurgerStack] = useState([])
 
   const addToBurger = (newIngredient) => {
     // remove the ingredient from available ingredients
@@ -31,8 +31,8 @@ const App = () => {
     setIngredientList(ingredientList.filter((_, i) => i !== newIngredient))
 
     // add the new ingredient to the burger
-    console.log([...stack, newIngredient])
-    setStack([...stack, newIngredient])
+    setBurgerStack([...burgerStack, newIngredient])
+    console.log([...burgerStack, newIngredient])
   }
 
   const removeFromBurger = (oldIngredient) => {
@@ -41,8 +41,8 @@ const App = () => {
     setIngredientList([...ingredientList, oldIngredient])
 
     // remove the ingredient from burger stack
-    console.log(stack.filter((_, i) => i !== oldIngredient))
-    setStack(stack.filter((_, i) => i !== oldIngredient))
+    setBurgerStack(burgerStack.filter((_, i) => i !== oldIngredient))
+    console.log(burgerStack.filter((_, i) => i !== oldIngredient))
   }
 
   return (
@@ -50,8 +50,8 @@ const App = () => {
       <h1>Burger Stacker</h1>
       <section>
       {/* List & Stack components */}
-      <IngredientList availableIngredients={availableIngredients} addToBurger={addToBurger} />
-      <BurgerStack availableIngredients={availableIngredients} removeFromBurger={removeFromBurger} />
+      <IngredientList availableIngredients={availableIngredients} ingredientList={ingredientList} burgerStack={burgerStack} addToBurger={addToBurger} />
+      <BurgerStack availableIngredients={availableIngredients} burgerStack={burgerStack} ingredientList={ingredientList} removeFromBurger={removeFromBurger} />
       </section>
     </main>
   )
