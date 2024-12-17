@@ -50,8 +50,18 @@ const App = () => {
       <h1>Burger Stacker</h1>
       <section>
       {/* List & Stack components */}
-      <IngredientList availableIngredients={availableIngredients} ingredientList={ingredientList} burgerStack={burgerStack} addToBurger={addToBurger} />
-      <BurgerStack availableIngredients={availableIngredients} burgerStack={burgerStack} ingredientList={ingredientList} removeFromBurger={removeFromBurger} />
+      <IngredientList 
+        availableIngredients={availableIngredients} 
+        ingredientList={ingredientList} 
+        burgerStack={burgerStack} 
+        addToBurger={addToBurger} 
+      />
+      <BurgerStack 
+        availableIngredients={availableIngredients} 
+        burgerStack={burgerStack} 
+        ingredientList={ingredientList} 
+        removeFromBurger={removeFromBurger} 
+      />
       </section>
     </main>
   )

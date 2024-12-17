@@ -12,6 +12,7 @@ const IngredientList = (props) => {
     //     console.log([...stack, newIngredient])
     //     setStack([...stack, newIngredient])
     // }
+    
 
     return (
         <ul>
