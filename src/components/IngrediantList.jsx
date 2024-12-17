@@ -2,6 +2,7 @@ import { useState } from "react"
 import { availableIngredients } from "../App"
 
 const IngredientList = (props) => {
+    
     return (
         <ul>
             console.log(props)
