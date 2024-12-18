@@ -26,23 +26,27 @@ const App = () => {
   const [burgerStack, setBurgerStack] = useState([])
 
   const addToBurger = (newIngredient) => {
-    // remove the ingredient from available ingredients
-    console.log(ingredientList.filter((_, i) => i !== newIngredient))
-    setIngredientList(ingredientList.filter((_, i) => i !== newIngredient))
-
+    // chosen ingredient
+    console.log(newIngredient)
+    // remove choosen ingredient from available list
+    console.log((ingredientList.filter(ingredient => ingredient !== newIngredient)))
+    setIngredientList(ingredientList.filter(ingredient => ingredient !== newIngredient))
+    
     // add the new ingredient to the burger
     setBurgerStack([...burgerStack, newIngredient])
     console.log([...burgerStack, newIngredient])
   }
 
   const removeFromBurger = (oldIngredient) => {
-    // add the old ingredient to the available ingredients
-    console.log([...ingredientList, oldIngredient])
-    setIngredientList([...ingredientList, oldIngredient])
-
+    // chosen ingredient
+    console.log(oldIngredient)
     // remove the ingredient from burger stack
     setBurgerStack(burgerStack.filter((_, i) => i !== oldIngredient))
     console.log(burgerStack.filter((_, i) => i !== oldIngredient))
+
+    // add the old ingredient to the available ingredients
+    console.log([...ingredientList, oldIngredient])
+    setIngredientList([...ingredientList, oldIngredient])
   }
 
   return (
